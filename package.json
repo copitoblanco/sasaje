@@ -1,0 +1,28 @@
+{
+  "name": "sasaje",
+  "version": "1.0.0",
+  "description": "Aquí se guardaran los avances en el proceso del ciclo 4 MINTIC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/copitoblanco/sasaje.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/copitoblanco/sasaje/issues"
+  },
+  "homepage": "https://github.com/copitoblanco/sasaje#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
