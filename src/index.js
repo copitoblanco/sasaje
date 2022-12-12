@@ -3,20 +3,9 @@ const app = express();
 const morgan = require('morgan')
 
 //Configuraciones
+app.use(express.json());
 app.set('port', process.env.PORT || 3000);
 app.set('json spaces', 2)
-
-
-// Enrutamiento
-/*
-app.get('/', (req, res) => {    
-    res.json(
-        {
-            "Title": "Hola mundo"
-        }
-    );
-})
-*/
 
 //Routes
 app.use(require('./routes/index'));
