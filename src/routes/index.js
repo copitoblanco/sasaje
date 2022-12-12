@@ -58,8 +58,13 @@ router.get('/jugador', (req, res) => {
 })
 
 router.post('/jugador', validate({body: jugadorSchema}), (req, res) => {
-    jugadores.push(req.body);   
-    res.json(req.body);
+    const j = jugadores.find(({id}) => id === req.body.id)
+    if(j==null){
+        jugadores.push(req.body);   
+        res.json(req.body);
+    }else{
+        res.json({"Msg":"Id ya existe"});
+    }
 })
 
 //Juego
@@ -85,8 +90,13 @@ router.get('/juego', (req, res) => {
 })
 
 router.post('/juego', validate({body: juegoSchema}), (req, res) => {
-    juegos.push(req.body);   
-    res.json(req.body);
+    const j = juegos.find(({id}) => id === req.body.id)
+    if(j==null){
+        juegos.push(req.body);   
+        res.json(req.body);
+    }else{
+        res.json({"Msg":"Id ya existe"});
+    }
 })
 
 
