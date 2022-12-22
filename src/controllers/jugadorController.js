@@ -6,8 +6,15 @@ exports.crearjugador = async (req,res)=>{
     const {password} = req.body;
 
     try {
+        //Encontrar como unico usuario
+
+        let jugador = await Jugador.findOne({email});
+        if (usuario){return res.status(404).json({msg:"El usuario ya existe"});
+
+        }
+
         //Crear el nuevo usuario 
-        const jugador = new Jugador (req.body);
+        jugador = new Jugador (req.body);
         
         //hash
         jugador.password= await bcryptjs.hash(password, 10);
