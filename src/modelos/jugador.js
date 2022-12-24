@@ -5,8 +5,9 @@ const jugadorSchema=mongoose.Schema({
     gametargs:{type:String,require:true, trim:true},
     email:{type:String,require:true,trim:true,unique:true},
     ciudad:{type:String,require:true},
-    identificacion:{type:Number, min:18,max:110,unique:true}
+    identificacion:{type:Number, min:18,max:110,unique:true},
+    password:{type:String,require:true}
 });
     
-    //Definir modelo
-    module.exports=mongoose.model("jugador",jugadorSchema);
+//Definir modelo
+module.exports=mongoose.model("jugador",jugadorSchema);

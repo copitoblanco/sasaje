@@ -20,6 +20,6 @@ router.delete("/", (req, res)=>{
 router.post(
     "/",
     jugadorController.crearjugador
-)
+);
 
 module.exports=router; 

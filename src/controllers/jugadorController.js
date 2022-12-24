@@ -3,14 +3,14 @@ const bcryptjs = require ("bcryptjs");
 
 exports.crearjugador = async (req,res)=>{
     //console.log(req.body);
-    const {password} = req.body;
+    const {password,email} = req.body;
 
     try {
         //Encontrar como unico usuario
 
         let jugador = await Jugador.findOne({email});
-        if (usuario){return res.status(404).json({msg:"El usuario ya existe"});
-
+        if (jugador){
+            return res.status(404).json({msg:"El usuario ya existe"});
         }
 
         //Crear el nuevo usuario 
@@ -20,13 +20,13 @@ exports.crearjugador = async (req,res)=>{
         jugador.password= await bcryptjs.hash(password, 10);
 
         //Guardar en la base de datos
-        const jugadorAlmacenado= await jugador.save();
+        const jugadorAlmacenado = await jugador.save();
 
-         res.json(jugadorAlmacenado);
+        res.json(jugadorAlmacenado);
 
     }catch(error){
-            console.log(error)
-        }
+        console.log(error)
+    }
     };
 
 
